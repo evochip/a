@@ -2,15 +2,8 @@
 <html lang="ko">
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="google-site-verification" content="P2j0yDkZq7ZUQhMfZdkYYHH-adD2y8hmlKcVv3cW790" />
-    <title>사이트 제목</title>
-    <!-- 다른 head 요소들 -->
-
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>EVOCHIP</title>
 
 <style>
@@ -19,13 +12,11 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* 상단 */
 .top {
   padding: 20px 40px;
   border-bottom: 1px solid #ddd;
 }
 
-/* 메인 영역 */
 .main {
   background: #0f1c2e;
   color: white;
@@ -35,20 +26,66 @@ body {
 
 .main h1 {
   font-size: 44px;
-  margin-top: 20px;
 }
 
-/* 소개 영역 */
 .info {
   padding: 60px 20px;
   text-align: center;
+}
+
+.contact-info {
+  margin-top: 30px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.board-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: #0f1c2e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.board {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: none;
+}
+
+.board table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.board th, .board td {
+  border-bottom: 1px solid #ddd;
+  padding: 12px;
+}
+
+.board th {
+  background: #f6f8fa;
+}
+
+.board-title {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.board-content {
+  display: none;
+  padding: 15px;
+  background: #f9f9f9;
+  margin-top: 10px;
 }
 
 .footer {
   background: #f2f2f2;
   padding: 20px;
   text-align: center;
-  font-size: 14px;
 }
 </style>
 
@@ -56,38 +93,70 @@ body {
 
 <body>
 
-<!-- 상단 로고 -->
 <div class="top">
-    <img src="logo.png" style="height:50px;">
+  <img src="logo.png" style="height:50px;">
 </div>
 
-
-<!-- 메인 -->
 <div class="main">
   <h1>EVOCHIP</h1>
   <p>Innovation Beyond Technology</p>
-
 </div>
 
-<!-- 페이지 준비중입니다. -->
 <div class="info">
   <h3>페이지 준비중입니다.</h3>
+  <p>보다 나은 서비스로 곧 찾아뵙겠습니다.</p>
 
-<p>
-		
- 
-    보다 나은 서비스로 곧 찾아뵙겠습니다.
-		<br>
-	</p>
-  <p style="margin-top:30px;">
-  ✉ gaadmin@evochip.co.kr<br>
-  ☎ 031-741-7471
-  </p>
+  <!-- 연락처 복구 -->
+  <div class="contact-info">
+    ✉ gaadmin@evochip.co.kr<br>
+    ☎ 031-741-7471
+  </div>
+
+  <button class="board-btn" onclick="toggleBoard()">게시판 보기</button>
+</div>
+
+<div class="board" id="boardSection">
+  <h2>공지사항</h2>
+  <table>
+    <tr>
+      <th style="width:10%;">번호</th>
+      <th>제목</th>
+      <th style="width:20%;">작성일</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>
+        <span class="board-title" onclick="toggleContent()">
+          홈페이지 리뉴얼 안내
+        </span>
+      </td>
+      <td>2026-02-11</td>
+    </tr>
+  </table>
+
+  <div class="board-content" id="postContent">
+    현재 ㈜에보칩 홈페이지는 리뉴얼 작업 중입니다.<br>
+    더 나은 모습으로 곧 찾아뵙겠습니다.
+  </div>
 </div>
 
 <div class="footer">
   © 2026 EVOCHIP. All Rights Reserved.
 </div>
+
+<script>
+function toggleBoard() {
+  const board = document.getElementById("boardSection");
+  board.style.display =
+    board.style.display === "block" ? "none" : "block";
+}
+
+function toggleContent() {
+  const content = document.getElementById("postContent");
+  content.style.display =
+    content.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
