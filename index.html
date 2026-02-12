@@ -1,142 +1,146 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EVOCHIP</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+.footer {
+  background: #ffffff;        /* 배경 흰색 */
+  text-align: center;         /* 글자 가운데 정렬 */
+  padding: 25px 12%;
+  font-size: 14px;
 }
 
 .top {
-  padding: 20px 40px;
-  border-bottom: 1px solid #ddd;
+  background: #ffffff;   /* 흰색 바 */
+  padding: 20px 12%;
+  border-bottom: 1px solid #e5e5e5; /* 아래 얇은 선 */
 }
 
-.main {
-  background: #0f1c2e;
-  color: white;
-  text-align: center;
-  padding: 120px 20px 40px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.main h1 {
-  font-size: 44px;
-}
-
-.info {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.contact-info {
-  margin-top: 30px;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
-.board-btn {
-  margin-top: 30px;
-  padding: 12px 24px;
-  background: #0f1c2e;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.board {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-  display: none;
-}
-
-.board table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.board th, .board td {
-  border-bottom: 1px solid #ddd;
-  padding: 12px;
-}
-
-.board th {
-  background: #f6f8fa;
-}
-
-.board-title {
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.board-content {
-  display: none;
-  padding: 15px;
-  background: #f9f9f9;
-  margin-top: 10px;
-}
-
-.footer {
+body {
+  font-family: Arial, Helvetica, sans-serif;
   background: #f2f2f2;
-  padding: 20px;
-  text-align: center;
+  color: #000;
+}
+
+/* 상단 헤더 */
+.header {
+  background: #ffffff;
+  padding: 60px 12%;
+}
+
+.header h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.header p {
+  font-size: 20px;
+  color: #333;
+}
+
+/* 보라색 메인 영역 */
+.main {
+  background: #4b50b9; /* 이미지와 유사한 보라톤 */
+  color: #ffffff;
+  padding: 90px 12%;
+}
+
+/* 내부 레이아웃 */
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+/* 왼쪽 영역 */
+.left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.left h2 {
+  font-size: 44px;
+  margin-bottom: 40px;
+}
+
+.left h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.left p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* 오른쪽 영역 */
+.right {
+  flex: 1;
+  min-width: 300px;
+  margin-top: 80px;
+}
+
+.right h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.right p {
+  font-size: 18px;
+  margin-bottom: 15px;
 }
 </style>
-
 </head>
 
 <body>
 
+<!-- 상단 로고 -->
 <div class="top">
-  <img src="logo.png" style="height:50px;">
+
+
+
+    <img src="logo.png" style="height:50px;">
 </div>
 
-<div class="main">
+
+
+<!-- 상단 -->
+<div class="header">
   <h1>EVOCHIP</h1>
   <p>Innovation Beyond Technology</p>
 </div>
 
-<div class="info">
-  <h3>페이지 준비중입니다.</h3>
-  <p>보다 나은 서비스로 곧 찾아뵙겠습니다.</p>
+<!-- 보라색 영역 -->
+<div class="main">
+  <div class="content">
 
-  <!-- 연락처 복구 -->
-  <div class="contact-info">
-    ✉ gaadmin@evochip.co.kr<br>
-    ☎ 031-741-7471
-  </div>
+    <div class="left">
+      <h2>페이지 준비중입니다</h2>
 
-  <button class="board-btn" onclick="toggleBoard()">게시판 보기</button>
-</div>
+      <h3>보다 나은 서비스</h3>
+      <p>㈜에보칩 홈페이지는 현재 리뉴얼 작업 중입니다.</p>
+      <p>더 나은 모습으로 곧 찾아뵙겠습니다.</p>
+    </div>
 
-<div class="board" id="boardSection">
-  <h2>공지사항</h2>
-  <table>
-    <tr>
-      <th style="width:10%;">번호</th>
-      <th>제목</th>
-      <th style="width:20%;">작성일</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>
-        <span class="board-title" onclick="toggleContent()">
-          홈페이지 리뉴얼 작업 중입니다
-        </span>
-      </td>
-      <td>2026-02-11</td>
-    </tr>
-  </table>
+    <div class="right">
+      <h3>연락처 정보</h3>
+      <p>이메일: gaadmin@evochip.co.kr</p>
+      <p>전화: 031-741-7471</p>
+    </div>
 
-  <div class="board-content" id="postContent">
-    현재 ㈜에보칩 홈페이지는 리뉴얼 작업 중입니다.<br>
-    더 나은 모습으로 곧 찾아뵙겠습니다.
   </div>
 </div>
 
@@ -144,19 +148,7 @@ body {
   © 2026 EVOCHIP. All Rights Reserved.
 </div>
 
-<script>
-function toggleBoard() {
-  const board = document.getElementById("boardSection");
-  board.style.display =
-    board.style.display === "block" ? "none" : "block";
-}
 
-function toggleContent() {
-  const content = document.getElementById("postContent");
-  content.style.display =
-    content.style.display === "block" ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
